@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartLearn AI | Learn Smarter</title>
+<style>
+:root{--bg:#0b1020;--panel:#141c32;--panel2:#1c2743;--text:#f4f7ff;--muted:#a9b5d0;--purple:#8b5cf6;--cyan:#55d8ff;--line:#2b3858;--green:#53e0b0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#22204b 0,transparent 30%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.5}
+button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:12px 17px;font-weight:700;transition:.2s}
+button:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.primary{background:linear-gradient(100deg,var(--purple),#6744df);color:white;box-shadow:0 8px 24px #754de533}
+.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
+header{max-width:1160px;margin:auto;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-size:1.12rem;font-weight:850;letter-spacing:-.3px}.logo{width:42px;height:42px;display:grid;place-items:center;background:linear-gradient(140deg,var(--purple),#4b9eff);border-radius:13px;font-size:23px}
+.brand small{display:block;font-size:.73rem;color:var(--muted);font-weight:500;letter-spacing:0}
+nav{display:flex;gap:8px;flex-wrap:wrap}nav button{background:transparent;color:var(--muted);padding:10px 13px}nav button.active,nav button:hover{background:var(--panel2);color:white}
+main{max-width:1160px;margin:auto;padding:12px 24px 60px}.hero{padding:35px 0 27px;display:grid;grid-template-columns:1.45fr .8fr;gap:24px;align-items:center}
+.eyebrow{color:var(--cyan);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:1.7px}
+h1{font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.06;letter-spacing:-2px;margin:13px 0 17px}.gradient{background:linear-gradient(90deg,#bca4ff,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+p{color:var(--muted);margin:0 0 20px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card,.card{background:linear-gradient(145deg,#17213aee,#11192dee);border:1px solid var(--line);border-radius:22px;padding:23px;box-shadow:0 16px 50px #0002}
+.hero-card h3{margin:0 0 5px}.mini-label{font-size:.8rem;color:var(--muted)}.score-row{display:flex;justify-content:space-between;align-items:center;margin:18px 0 8px;font-size:.9rem}.track{height:9px;border-radius:20px;background:#293451;overflow:hidden}.fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--purple),var(--cyan));width:0;transition:width .4s}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:22px 0 15px}.section-head h2{margin:0;font-size:1.45rem;letter-spacing:-.5px}.section-head p{font-size:.9rem;margin:4px 0 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.stat{padding:19px}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.85rem}.stat strong{display:block;font-size:1.9rem;margin:10px 0 0}.stat .icon{font-size:1.35rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.subject{padding:21px;display:flex;flex-direction:column;min-height:210px}.subject-icon{font-size:1.8rem;margin-bottom:12px}.subject h3{margin:0 0 5px}.subject p{font-size:.9rem;margin-bottom:18px;flex:1}.subject button{width:100%}
+.panel{margin-top:28px}.hidden{display:none!important}
+.quiz-wrap{max-width:760px;margin:28px auto}.quiz-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem;margin-bottom:12px}.question{font-size:1.45rem;line-height:1.35;margin:20px 0}.answers{display:grid;gap:10px}.answer{width:100%;text-align:left;background:#1b2743;border:1px solid #344262;color:var(--text);font-weight:600}.answer.selected{border-color:var(--cyan);background:#18334a}.answer.correct{border-color:var(--green);background:#15382f}.answer.wrong{border-color:#ff8d9a;background:#42242f}.quiz-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
+.feedback{border:1px solid var(--line);background:#18223b;border-radius:16px;padding:17px;margin:15px 0}.feedback h3{margin:0 0 6px}.feedback p{margin:0}.recommendation{display:flex;gap:13px;align-items:flex-start;padding:14px;background:#1b2743;border:1px solid var(--line);border-radius:14px;margin:10px 0}.recommendation .emoji{font-size:1.4rem}
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding:30px 20px;border-top:1px solid #1e2943}
+.notice{font-size:.83rem;color:var(--muted);margin-top:14px}
+@media(max-width:800px){header{align-items:flex-start;flex-direction:column}.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{padding:15px}.hero-card{max-width:none}main{padding:8px 16px 45px}h1{letter-spacing:-1px}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo">✦</div><div>SmartLearn AI<small>Your personal learning assistant</small></div></div>
+  <nav aria-label="Main navigation">
+    <button class="active" data-page="home">Home</button>
+    <button data-page="progress">My Progress</button>
+    <button data-page="recommendations">Recommendations</button>
+  </nav>
+</header>
+<main>
+  <section id="homePage">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">✧ Your learning, personalized</div>
+        <h1>Learn smarter,<br><span class="gradient">not harder.</span></h1>
+        <p>Build confidence one step at a time. Take a quiz, discover your strengths, and get a learning plan that responds to your results.</p>
+        <div class="hero-actions"><button class="primary" onclick="startQuiz('math')">Start learning&nbsp; →</button><button class="secondary" onclick="showPage('progress')">View my progress</button></div>
+      </div>
+      <div class="hero-card">
+        <div class="mini-label">YOUR LEARNING SNAPSHOT</div><h3 style="margin-top:7px">Every attempt helps you grow.</h3>
+        <div class="score-row"><span>Overall quiz average</span><strong id="heroAverage">—</strong></div>
+        <div class="track"><div class="fill" id="heroFill"></div></div>
+        <div class="score-row"><span>Quizzes completed</span><strong id="heroCount">0</strong></div>
+        <div class="score-row"><span>Learning status</span><strong style="color:var(--cyan)" id="heroStatus">Ready to begin</strong></div>
+      </div>
+    </div>
+    <div class="section-head"><div><h2>Your learning space</h2><p>Choose a subject to begin a short quiz.</p></div></div>
+    <div class="cards">
+      <article class="card subject"><div class="subject-icon">➗</div><h3>Mathematics</h3><p>Practise fractions, percentages, and number skills.</p><button class="primary" onclick="startQuiz('math')">Take Maths quiz</button></article>
+      <article class="card subject"><div class="subject-icon">🧪</div><h3>Science</h3><p>Test your understanding of key science concepts.</p><button class="primary" onclick="startQuiz('science')">Take Science quiz</button></article>
+      <article class="card subject"><div class="subject-icon">🧠</div><h3>Learning insights</h3><p>Review your results and find your next best step.</p><button class="secondary" onclick="showPage('recommendations')">See recommendations</button></article>
+    </div>
+    <div class="panel card"><h2 style="margin-top:0">How SmartLearn works</h2><div class="cards" style="grid-template-columns:repeat(3,1fr)">
+      <div><div class="subject-icon">①</div><strong>Take a quiz</strong><p style="font-size:.9rem;margin:6px 0 0">Answer questions to check your understanding.</p></div>
+      <div><div class="subject-icon">②</div><strong>Understand your results</strong><p style="font-size:.9rem;margin:6px 0 0">Your score helps identify what you know and what to practise.</p></div>
+      <div><div class="subject-icon">③</div><strong>Choose your next step</strong><p style="font-size:.9rem;margin:6px 0 0">Get a suggested revision activity or a harder challenge.</p></div>
+    </div></div>
+  </section>
+  <section id="quizPage" class="hidden">
+    <div class="quiz-wrap card">
+      <button class="secondary" onclick="showPage('home')" style="padding:8px 12px">← Home</button>
+      <div id="quizContent"></div>
+    </div>
+  </section>
+  <section id="progressPage" class="hidden">
+    <div class="section-head"><div><h2>My progress</h2><p>Your completed quizzes and results appear here.</p></div><button class="secondary" onclick="resetProgress()">Reset demo data</button></div>
+    <div class="stats">
+      <div class="card stat"><div class="stat-top">Quizzes completed <span class="icon">📝</span></div><strong id="statCount">0</strong></div>
+      <div class="card stat"><div class="stat-top">Average score <span class="icon">📈</span></div><strong id="statAverage">—</strong></div>
+      <div class="card stat"><div class="stat-top">Best subject <span class="icon">⭐</span></div><strong id="statBest" style="font-size:1.35rem">Not yet known</strong></div>
+    </div>
+    <div class="card panel"><h3 style="margin-top:0">Subject performance</h3><div id="subjectProgress"><p>Complete a quiz to see your progress.</p></div></div>
+    <div class="card panel"><h3 style="margin-top:0">Recent attempts</h3><div id="attemptList"><p>No quizzes completed yet.</p></div></div>
+  </section>
+  <section id="recommendationsPage" class="hidden">
+    <div class="section-head"><div><h2>Your next steps</h2><p>Suggestions are based on your most recent quiz results.</p></div></div>
+    <div class="card"><div id="recommendationList"><div class="recommendation"><div class="emoji">🚀</div><div><strong>Start with a quiz</strong><p style="margin:4px 0 0">Take a Maths or Science quiz so SmartLearn can suggest your next step.</p></div></div></div></div>
+    <p class="notice">Note: This school-project prototype uses transparent score-based rules. It does not send student data to an external AI service.</p>
+  </section>
+</main>
+<footer>SmartLearn AI · Learn at your own pace · A student project prototype</footer>
+<script>
+const quizzes = {
+ math:{name:"Mathematics",icon:"➗",questions:[
+  {q:"What is 1/2 + 1/4?",options:["2/6","3/4","1/6","2/4"],answer:1,topic:"Fractions",explain:"Use a common denominator: 1/2 = 2/4, so 2/4 + 1/4 = 3/4."},
+  {q:"What is 25% of 80?",options:["10","15","20","25"],answer:2,topic:"Percentages",explain:"25% is one quarter. 80 ÷ 4 = 20."},
+  {q:"What is 7 × 8?",options:["48","54","56","64"],answer:2,topic:"Multiplication",explain:"7 groups of 8 equal 56."},
+  {q:"A notebook costs 12 AED. What do 3 notebooks cost?",options:["24 AED","36 AED","15 AED","30 AED"],answer:1,topic:"Multiplication",explain:"12 × 3 = 36 AED."},
+  {q:"Which fraction is equal to 0.5?",options:["1/4","2/5","3/4","1/2"],answer:3,topic:"Fractions",explain:"One half equals 0.5 or 50%."}
+ ]},
+ science:{name:"Science",icon:"🧪",questions:[
+  {q:"Which particle has a negative electric charge?",options:["Proton","Neutron","Electron","Nucleus"],answer:2,topic:"Electricity",explain:"Electrons carry a negative electric charge."},
+  {q:"What is the change from a gas to a liquid called?",options:["Evaporation","Condensation","Melting","Freezing"],answer:1,topic:"States of matter",explain:"During condensation, a gas cools and changes into a liquid."},
+  {q:"In which medium does sound usually travel fastest?",options:["Vacuum","Air","Water","Steel"],answer:3,topic:"Sound",explain:"Sound generally travels faster through solids because their particles interact closely."},
+  {q:"Which is a source of renewable energy?",options:["Coal","Petroleum","Sunlight","Natural gas"],answer:2,topic:"Energy",explain:"Sunlight is naturally replenished and is a renewable energy source."},
+  {q:"Which instrument can detect electric charge?",options:["Thermometer","Electroscope","Barometer","Microscope"],answer:1,topic:"Electricity",explain:"An electroscope helps detect the presence of electric charge."}
+ ]}
+};
+let current=null, qIndex=0, selected=null, answers=[], attempts=[];
+const $=id=>document.getElementById(id);
+function showPage(page){
+  ["home","quiz","progress","recommendations"].forEach(p=>$(p+"Page").classList.toggle("hidden",p!==page));
+  document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+  if(page==="progress")renderProgress(); if(page==="recommendations")renderRecommendations();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+function startQuiz(subject){current=subject;qIndex=0;selected=null;answers=[];showPage("quiz");renderQuestion();}
+function renderQuestion(){
+ const quiz=quizzes[current],q=quiz.questions[qIndex];
+ $("quizContent").innerHTML=`<div class="eyebrow" style="margin-top:20px">${quiz.icon} ${quiz.name} quiz</div>
+ <div class="quiz-meta"><span>Question ${qIndex+1} of ${quiz.questions.length}</span><span>${Math.round(qIndex/quiz.questions.length*100)}% complete</span></div>
+ <div class="track"><div class="fill" style="width:${qIndex/quiz.questions.length*100}%"></div></div>
+ <h2 class="question">${q.q}</h2><div class="answers">${q.options.map((o,i)=>`<button class="answer ${selected===i?"selected":""}" data-answer="${i}">${String.fromCharCode(65+i)}. &nbsp;${o}</button>`).join("")}</div>
+ <div id="questionFeedback"></div><div class="quiz-footer"><span class="mini-label">Choose one answer.</span><button id="nextBtn" class="primary" ${selected===null?"disabled style='opacity:.45;cursor:not-allowed'":""}>${qIndex===quiz.questions.length-1?"Finish quiz":"Next question →"}</button></div>`;
+ document.querySelectorAll("[data-answer]").forEach(b=>b.addEventListener("click",()=>{selected=Number(b.dataset.answer);renderQuestion();}));
+ $("nextBtn").addEventListener("click",()=>{if(selected===null)return;answers.push(selected);if(qIndex<quizzes[current].questions.length-1){qIndex++;selected=null;renderQuestion()}else finishQuiz()});
+}
+function finishQuiz(){
+ const quiz=quizzes[current],correct=answers.filter((a,i)=>a===quiz.questions[i].answer).length,score=Math.round(correct/quiz.questions.length*100);
+ const missed=quiz.questions.filter((q,i)=>answers[i]!==q.answer).map(q=>q.topic);
+ const attempt={subject:current,name:quiz.name,score,correct,total:quiz.questions.length,date:new Date().toLocaleDateString(),missed:[...new Set(missed)]};
+ attempts.unshift(attempt);
+ let heading,detail,next;
+ if(score<60){heading="Let's strengthen the basics";detail=`You scored ${score}%. That's a useful starting point. Review ${missed.length?missed.join(" and "):"the key ideas"} and try another quiz.`;next="Revise the topics you missed, then retake the quiz."}
+ else if(score<80){heading="Good progress — keep practising";detail=`You scored ${score}%. You have a good start. A little more practice with ${missed.length?missed.join(" and "):"these concepts"} can help you improve.`;next="Try a few more practice questions on the topics you missed."}
+ else{heading="Excellent work!";detail=`You scored ${score}%. You showed strong understanding of this quiz.`;next="Try a more challenging quiz or explore a new topic."}
+ $("quizContent").innerHTML=`<div style="text-align:center;padding:28px 0 12px"><div style="font-size:3rem">${score>=80?"🏆":score>=60?"🌟":"💡"}</div><div class="eyebrow">Quiz completed</div><h2 style="font-size:2rem;margin:8px 0">${heading}</h2><div style="font-size:3rem;font-weight:850" class="gradient">${score}%</div><p>You answered ${correct} out of ${quiz.questions.length} questions correctly.</p></div>
+ <div class="feedback"><h3>Personalized feedback</h3><p>${detail}</p></div>
+ <div class="feedback"><h3>Your next step</h3><p>${next}</p></div>
+ <h3>Review your answers</h3>${quiz.questions.map((q,i)=>`<div class="recommendation"><div class="emoji">${answers[i]===q.answer?"✅":"📘"}</div><div><strong>${q.topic}: ${answers[i]===q.answer?"Correct":"Review this answer"}</strong><p style="margin:4px 0 0">${q.explain}</p></div></div>`).join("")}
+ <div class="hero-actions" style="margin-top:20px"><button class="primary" onclick="startQuiz('${current}')">Try again</button><button class="secondary" onclick="showPage('progress')">View progress</button><button class="secondary" onclick="showPage('recommendations')">Next steps</button></div>`;
+ updateSnapshot();
+}
+function updateSnapshot(){
+ const count=attempts.length,avg=count?Math.round(attempts.reduce((s,a)=>s+a.score,0)/count):0;
+ $("heroAverage").textContent=count?avg+"%":"—";$("heroFill").style.width=avg+"%";$("heroCount").textContent=count;
+ $("heroStatus").textContent=!count?"Ready to begin":avg>=80?"Doing great":avg>=60?"Making progress":"Building foundations";
+}
+function renderProgress(){
+ const count=attempts.length,avg=count?Math.round(attempts.reduce((s,a)=>s+a.score,0)/count):0;
+ $("statCount").textContent=count;$("statAverage").textContent=count?avg+"%":"—";
+ const subjectScores=Object.keys(quizzes).map(k=>({key:k,name:quizzes[k].name,items:attempts.filter(a=>a.subject===k)})).filter(x=>x.items.length).map(x=>({...x,avg:Math.round(x.items.reduce((s,a)=>s+a.score,0)/x.items.length)}));
+ $("statBest").textContent=subjectScores.length?subjectScores.reduce((a,b)=>a.avg>=b.avg?a:b).name:"Not yet known";
+ $("subjectProgress").innerHTML=subjectScores.length?subjectScores.map(s=>`<div class="score-row"><span>${quizzes[s.key].icon} ${s.name} · ${s.items.length} attempt(s)</span><strong>${s.avg}%</strong></div><div class="track"><div class="fill" style="width:${s.avg}%"></div></div>`).join(""):"<p>Complete a quiz to see your progress.</p>";
+ $("attemptList").innerHTML=count?attempts.map(a=>`<div class="recommendation"><div class="emoji">${quizzes[a.subject].icon}</div><div style="flex:1"><strong>${a.name}</strong><p style="margin:3px 0 0">${a.date} · ${a.correct}/${a.total} correct</p></div><strong>${a.score}%</strong></div>`).join(""):"<p>No quizzes completed yet.</p>";
+}
+function renderRecommendations(){
+ const latest=attempts.filter(a=>a.subject===current)[0]||attempts[0];
+ if(!latest){$("recommendationList").innerHTML='<div class="recommendation"><div class="emoji">🚀</div><div><strong>Start with a quiz</strong><p style="margin:4px 0 0">Take a Maths or Science quiz so SmartLearn can suggest your next step.</p></div></div>';return}
+ let html="";
+ if(latest.score<60)html+=`<div class="recommendation"><div class="emoji">📘</div><div><strong>Review the foundations in ${latest.name}</strong><p style="margin:4px 0 0">Start with a short lesson on ${latest.missed.join(", ")||"the main concepts"}, then answer practice questions.</p></div></div>`;
+ else if(latest.score<80)html+=`<div class="recommendation"><div class="emoji">✍️</div><div><strong>Build confidence with more practice</strong><p style="margin:4px 0 0">Practise ${latest.missed.join(", ")||"the topics in your quiz"} and check your answers carefully.</p></div></div>`;
+ else html+=`<div class="recommendation"><div class="emoji">🚀</div><div><strong>Try a harder challenge</strong><p style="margin:4px 0 0">Your ${latest.name} score was ${latest.score}%. Try advanced questions or move on to a new topic.</p></div></div>`;
+ html+=`<div class="recommendation"><div class="emoji">📊</div><div><strong>Keep tracking your progress</strong><p style="margin:4px 0 0">Take another quiz later and compare your score to see how your learning changes.</p></div></div>`;
+ $("recommendationList").innerHTML=html;
+}
+function resetProgress(){if(confirm("Clear all quiz attempts from this session?")){attempts=[];updateSnapshot();renderProgress();renderRecommendations()}}
+updateSnapshot();
+</script>
+</body>
+</html>
